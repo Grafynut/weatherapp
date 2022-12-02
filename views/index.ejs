@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <main id="main">
+        <div class="container">
+            <form action="/" method="get">
+                <center>
+                    <div class="searchDiv">
+                        <input type="text" name="city" class="inputbox" placeholder="Enter city name">
+                        <div class="searchCity">Search</div>
+                        <input type="submit" value="Search" class="searchbtn">
+                    </div>
+                </center>
+            </form>
+            <% if (statuscode===200) { %>
+                <div id="wetaher_Report">
+                    <div class="toppart">
+                        <i class="fas fa-map-marker-alt"></i> &nbsp;
+                        <%= data.name %>,
+                            <%= data.sys.country %>
+                    </div>
+                    <div class="weatherIcon">
+                        <img src="http://openweathermap.org/img/w/<%= data.weather[0].icon %>.png" alt="icon">
+                        <h2>
+                            <%= Math.floor(data.main.temp - 273.15) %>&deg;C
+                        </h2>
+                        <p>
+                            <%= data.weather[0].main %>
+                        </p>
+                    </div>
+                    <div class="allInfo">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    Pressure
+                                </td>
+                                <td>
+                                    <%=data.main.pressure%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Humidity
+                                </td>
+                                <td>
+                                    <%=data.main.humidity%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Wind speed/deg
+                                </td>
+                                <td>
+                                    <%=data.wind.speed%>/<%=data.wind.deg%>&deg;
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="bottomPart">
+                        <p style="display: flex; flex-direction:column;">
+                            <span style="font-size: 1.2rem; color: #fff;">last update</span>
+                            <%= localtime.slice(0,24) %>
+                        </p>
+                        <p class="time"></p>
+                    </div>
+                </div>
+                <% }else{ %>
+                    <p>Please Enter currect city</p>
+                    <% } %>
+
+        </div>
+    </main>
+    <script src="/index.js" type="text/javascript"></script>
+
+</body>
+
+</html>

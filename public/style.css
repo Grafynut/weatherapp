@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'roboto';
+    transition: 0.3s;
+    font-size: 1.6rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+td {
+    color: #fff;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(128deg, #45C4B0, #13678A, #4546c4)
+}
+
+.container {
+    width: max-content;
+    height: max-content;
+    position: relative;
+}
+
+.searchDiv {
+    width: 6rem;
+    height: 6rem;
+    padding: 5px;
+    border-radius: 50%;
+    background: #45C4B0;
+    margin-bottom: 1.5rem;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+.searchActive {
+    width: 70%;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 4px;
+}
+
+.inputbox {
+    display: none;
+    outline: none;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 0 8px;
+    background: #ffffff6e;
+    font-size: 1.8rem;
+}
+
+.searchCity {
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    color: black;
+}
+
+.searchCity::after {
+    content: "";
+    width: 2rem;
+    height: 0.5rem;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform-origin: right;
+    transform: rotate(45deg) translateX(100%);
+    border-radius: 0 5px 5px 0;
+}
+
+.searchbtn {
+    display: none;
+    height: 100%;
+    border-radius: 0 50% 50% 0;
+    border: 0;
+    background: #ffffff6e;
+    color: #000;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.searchbtn:hover {
+    background: #ffffff52;
+}
+
+
+#wetaher_Report {
+    width: 40rem;
+    max-height: 500px;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.473);
+    border-radius: 2rem;
+    padding: 1.5rem;
+}
+
+.toppart {
+    width: 100%;
+    height: max-content;
+    display: inline-flex;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+}
+
+.fas {
+    color: #fff;
+}
+
+.weatherIcon {
+    width: 100%;
+    height: max-content;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.39);
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+.weatherIcon img {
+    width: 7rem;
+}
+
+.weatherIcon h2 {
+    font-weight: lighter;
+    color: #ffffff;
+    font-size: 7rem;
+}
+
+.table {
+    width: 100%;
+    height: max-content;
+    padding: 1.5rem;
+}
+
+td {
+    padding: 0.75rem 0;
+}
+
+.bottomPart {
+    width: 100%;
+    height: max-content;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    position: absolute;
+    bottom: 1.5rem;
+    align-items: end;
+    left: 0;
+}
+
+
+
+@media (max-width: 992px) {
+    html {
+        font-size: 58%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 575px) {
+    html {
+        font-size: 52%;
+    }
+}
+
+@media (max-width: 280px) {
+    html {
+        font-size: 41%;
+    }
+}
+
+@media (max-width: 240px) {
+    html {
+        font-size: 30%;
+    }
+}
